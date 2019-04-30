@@ -1,0 +1,36 @@
+{
+  "name": "bright_ex1",
+  "version": "1.0.0",
+  "description": "Testing task number 1",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/u02249/br_task1.git"
+  },
+  "author": "Sverchkov Evgeniy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/u02249/br_task1/issues"
+  },
+  "homepage": "https://github.com/u02249/br_task1#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.5",
+    "babel-preset-es2015": "^6.24.1",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-config-prettier": "^4.2.0",
+    "eslint-plugin-import": "^2.17.2",
+    "prettier": "^1.17.0",
+    "webpack": "^4.30.0"
+  },
+  "eslintConfig": {
+    "extends": [
+      "airbnb-base",
+      "prettier"
+    ]
+  }
+}
