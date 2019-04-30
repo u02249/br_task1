@@ -1,20 +1,38 @@
 /* eslint-disable no-restricted-globals */
 // eslint-disable-next-line no-undef
 const doc = document;
-const btn = doc.getElementById('btnSum');
-btn.disabled = true;
-const form = doc.querySelector('form');
+const output = doc.getElementById('output');
+const button = doc.getElementById('btnSum');
 const firstInput = doc.getElementById('firstInput');
-const secontInput = doc.getElementById('secontInput');
-const errorStar = doc.createElement('span');
-errorStar.innerHTML = '*';
+const secondInput = doc.getElementById('secontInput');
+firstInput.value = 0.1;
+secondInput.value = 0.2;
 
-function onInputValue(event) {
-  const val = event.target.value;
-  if (isNaN(val)) {
-    form.insertBefore(errorStar, event.target);
-  }
+function print(message) {
+  const item = doc.createElement('p');
+  item.innerHTML = message;
+  output.appendChild(item);
 }
 
-firstInput.addEventListener('input', onInputValue);
-secontInput.addEventListener('input', onInputValue);
+function clearOutput() {
+  output.innerHTML = '';
+}
+
+button.addEventListener('click', () => {
+  const a = Number(firstInput.value);
+  const b = Number(secondInput.value);
+  let isValid = true;
+  clearOutput();
+  if (isNaN(a)) {
+    print('Не верно введен номер в первое поле!');
+    isValid = false;
+  }
+  if (isNaN(b)) {
+    print('Не верно введен номер во второе поле!');
+    isValid = false;
+  }
+  if (isValid) {
+    const res = (a * 100000000000000000 + b * 100000000000000000) / 100000000000000000;
+    print(res);
+  }
+})
